@@ -194,7 +194,7 @@ int main(int argc, char* argv[])
 
 	char* postsplit = strtok(postcal, " ");
 	PostStack* stackpost;
-	init(&stackpost);
+	Postinit(&stackpost);
 	while (postsplit != NULL)
 	{
 		//printf("%s\n", postsplit);
@@ -210,17 +210,19 @@ int main(int argc, char* argv[])
 	}
 	Postprintstack(stackpost);
 	printf("\n");
-	TreeNode* tree = CreateTree(&tree);
+	printf("=======================\n");
+	TreeNode* tree = NULL;
 	//printf("=-=-=-=-=-=-=-=-=-=-=-=\n");
 	AddTree(&stackpost, &tree);
-	/*printf("=======================\n");
+	printf("=======================\n");
 	TreePrint(tree, 0);
-	printf("=======================\n");*/
+	printf("=======================\n");
 	int res = Evaluate(tree);
 	printf("Result Answer : %d\n", res);
 	Postdestroystack(&stackpost);
 	DestroyTree(tree);
 	free(postcal);
+	free(p);
 	int a;
 	scanf("%d", &a);
 	return 0;

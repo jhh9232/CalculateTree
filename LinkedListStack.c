@@ -1,4 +1,6 @@
 #include "LinkedListStack.h"
+//https://costnc.tistory.com/258
+//https://kbms.tistory.com/9?category=372058
 
 void init(Stack** stack)
 {
@@ -68,7 +70,7 @@ void destroystack(Stack** stack)
 {
 	while ((*stack) != NULL)
 	{
-		pop(stack);
+		pop(&(*stack));
 	}
 }
 
